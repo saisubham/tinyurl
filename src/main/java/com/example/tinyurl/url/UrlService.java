@@ -4,6 +4,8 @@ import com.example.tinyurl.counter.CounterService;
 import com.example.tinyurl.utils.MathUtils;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UrlService {
 
@@ -22,4 +24,7 @@ public class UrlService {
 		return repository.save(url);
 	}
 
+	public Optional<Url> getLongUrl(String hash) {
+		return repository.findById(hash);
+	}
 }
