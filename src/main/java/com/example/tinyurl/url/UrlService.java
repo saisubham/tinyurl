@@ -1,15 +1,16 @@
-package com.example.tinyurl.service;
+package com.example.tinyurl.url;
 
+import com.example.tinyurl.counter.CounterService;
 import com.example.tinyurl.utils.MathUtils;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TinyUrlService {
+public class UrlService {
 
-	private final TinyUrlRepository repository;
+	private final UrlRepository repository;
 	private final CounterService counterService;
 
-	public TinyUrlService(TinyUrlRepository repository, CounterService counterService) {
+	public UrlService(UrlRepository repository, CounterService counterService) {
 		this.repository = repository;
 		this.counterService = counterService;
 	}

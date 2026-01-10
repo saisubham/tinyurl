@@ -1,4 +1,4 @@
-package com.example.tinyurl.service;
+package com.example.tinyurl.url;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

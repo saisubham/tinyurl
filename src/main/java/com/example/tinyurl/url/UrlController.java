@@ -1,4 +1,4 @@
-package com.example.tinyurl.service;
+package com.example.tinyurl.url;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -8,17 +8,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class TinyUrlController {
+public class UrlController {
 
-	private final TinyUrlService tinyUrlService;
+	private final UrlService urlService;
 
-	public TinyUrlController(TinyUrlService tinyUrlService) {
-		this.tinyUrlService = tinyUrlService;
+	public UrlController(UrlService urlService) {
+		this.urlService = urlService;
 	}
 
 	@PostMapping
 	public ResponseEntity<Url> shortenLongUrl(@RequestBody UrlRequest request) {
-		Url url = tinyUrlService.shorten(request.longUrl());
+		Url url = urlService.shorten(request.longUrl());
 		return ResponseEntity.ok().body(url);
 	}
 
