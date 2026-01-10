@@ -10,3 +10,6 @@ spring:
 
 server:
   port: 9000
+
+tinyurl:
+  hostname: http://tinyurl.sudosai.in
