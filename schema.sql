@@ -8,3 +8,5 @@ create table urls
     long_url   varchar(2048) not null,
     created_at timestamptz not null default now()
 );
+
+create index long_url_index on urls(long_url);
