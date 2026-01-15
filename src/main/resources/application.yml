@@ -5,8 +5,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/tinyurl
     username: test
     password: test
-#  jpa:
-#    show-sql: true
 
 server:
   port: 9000

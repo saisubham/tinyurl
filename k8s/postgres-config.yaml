@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+data:
+  username: test
+  password: test
+  database: tinyurl
+  schema.sql: |
+    create sequence counter
+    start with 1
+    increment by 1000;
+
+    create table urls
+    (
+        hash       varchar(7) primary key,
+        long_url   varchar(2048) not null,
+        created_at timestamptz not null default now()
+    );
+
+    create index long_url_index on urls(long_url);
